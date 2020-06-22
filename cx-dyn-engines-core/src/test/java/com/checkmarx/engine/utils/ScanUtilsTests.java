@@ -51,15 +51,15 @@ public class ScanUtilsTests {
 
     private ScanRequest createRequest(int num, String createdOn, String queuedOn) {
         DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm:ss");
-        DateTime dateCreated = createdOn==null ? null : formatter.parseDateTime(createdOn);
-        DateTime dateQueued = queuedOn==null ? null : formatter.parseDateTime(queuedOn);
+        DateTime dateCreated = createdOn == null ? null : formatter.parseDateTime(createdOn);
+        DateTime dateQueued = queuedOn == null ? null : formatter.parseDateTime(queuedOn);
 
-        Project project = new Project(num, "Project"+num);
+        Project project = new Project(num, "Project" + num);
         Stage stage = new Stage(num, "Queued");
         ProgramLanguage[] languages = new ProgramLanguage[0];
-
-        return new ScanRequest(num, "runId"+num, "team"+num, project, stage,
-                10000+num, false, true, "Portal", languages, dateCreated, dateQueued, null);
+        
+        return new ScanRequest(num, "runId" + num, "team" + num, project, stage, "", "", 0, 0, 10000 + num, false, true,
+                "Portal", 1, " initiator", languages, dateCreated, dateQueued, null, null);
     }
 
 }

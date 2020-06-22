@@ -116,10 +116,12 @@ public class ScriptingTests {
 	private ScanRequest createScanRequest(int loc) {
 		final ProgramLanguage[] languages = new ProgramLanguage[1];
 		languages[0] = new ProgramLanguage(1, "Java");
-		return new ScanRequest(1,"runid", "teamid", 
-				new Project(1, "project"), 
-				ScanStatus.to(ScanStatus.Queued),
-				loc, false, true, "origin", languages, DateTime.now(), DateTime.now(), null);
+		
+		return new ScanRequest(1, "runid", "teamid", new Project(1, "project"), ScanStatus.to(ScanStatus.Queued),
+				"", "", 0, 0, 
+				loc, false, true, "origin",
+				1, " initiator", languages, 
+				DateTime.now(), DateTime.now(), null, null);
 	}
 	
 }
